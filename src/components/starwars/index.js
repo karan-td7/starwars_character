@@ -33,7 +33,7 @@ export default function StarWars() {
       justifyContent="center"
     >
       {open ? (
-        <Grid templateColumns="repeat(1, 1fr)" gap={6} sx={{ p: 5 }}>
+        <Grid templateColumns="repeat(1, 1fr)" gap={6} sx={{ p: 5 }} zIndex={1}>
           <GridItem width="100%">
             <motion.div
               initial={{ x: 100, opacity: 0 }}
@@ -52,11 +52,12 @@ export default function StarWars() {
         <Grid
           templateColumns={{
             base: "repeat(1, 1fr)", // 1 column on mobile
-            md: "repeat(3, 1fr)", // 4 columns on desktop
-            lg: "repeat(5, 1fr)", // 6 columns on tablet
+            md: "repeat(3, 1fr)", // 3 columns on desktop
+            lg: "repeat(5, 1fr)", // 5 columns on tablet
           }}
           gap={6}
           sx={{ p: 5 }}
+          zIndex={1}
         >
           {data?.map((s, i) => (
             <GridItem key={i}>

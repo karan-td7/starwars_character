@@ -11,6 +11,8 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { char_images } from "./images";
+import Image from "next/image";
 
 export default function CardTemp({ data, setOpen, setDetail }) {
   const handleCardClick = () => {
@@ -29,20 +31,17 @@ export default function CardTemp({ data, setOpen, setDetail }) {
       }}
     >
       <CardHeader>
-        <Heading size="md">{data?.name}</Heading>
+        <Image
+          src={char_images[data.name]}
+          alt=""
+          objectFit={"fit"}
+          width={"100%"}
+          height={200}
+        />
       </CardHeader>
 
       <CardBody>
-        <Stack divider={<StackDivider />} spacing="4">
-          <Box>
-            <Heading size="xs" textTransform="uppercase">
-              Height
-            </Heading>
-            <Text pt="2" fontSize="sm">
-              {data?.height}
-            </Text>
-          </Box>
-        </Stack>
+        <Heading size="md">{data?.name}</Heading>
       </CardBody>
     </Card>
   );
